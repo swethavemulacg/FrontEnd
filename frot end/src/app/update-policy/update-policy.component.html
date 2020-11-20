@@ -1,0 +1,26 @@
+<form #RefundForm='ngForm' (ngSubmit)="updateData(RefundForm)">
+    <table class="table table-bordered table-hover" id="table-id">
+        <thead>
+            <tr style="background-color:lightgreen">
+                <th>Policy Id</th>
+                <th>Time Period</th>
+                <th>Refund Percentage</th>
+                <th>Airline Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td name="policyID" [(ngModel)]='refundData.policyID'>{{refundData.policyID}}</td>
+                <td><input type="text" name="timePeriod" id="id1" value="{{refundData.timePeriod}}"
+                        [(ngModel)]='refundData.timePeriod' /></td>
+                <td><input type="text" name="refundPercentage" value="{{refundData.refundPercentage}}"
+                    [(ngModel)]='refundData.refundPercentage'></td>
+                <td><input type="text" name="airlineName" value="{{refundData.airlineName}}"
+                    [(ngModel)]='refundData.airlineName' ></td>
+                <td><input type="button" value=update type="submit"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,75 @@
+<div class="p-3 mb-2" style="background-color: honeydew;">
+    <div class="alert alert-success" *ngIf="message1">
+      {{message1}}
+    </div>
+    <div class="alert alert-danger" *ngIf="message">
+      {{message}}
+    </div>
+    <div class="col-md-4 offset-md-4 mt-4">
+      <h4 style="font-family:Arial, Helvetica, sans-serif">
+        <b style="color: blue;">
+          Add Refund Policy
+        </b>
+      </h4>
+      <hr>
+      <form #RefundForm='ngForm' (ngSubmit)="postRefundData(RefundForm)">
+        <div class="form-group">
+  
+          <label for="PolicyId">Enter PolicyId :</label>
+          <input type="text" class="form-control" id="PolicyId" name="policyID" #name='ngModel' ngModel required>
+          <div *ngIf='name.invalid && name.touched'>
+            <small class="text-danger" *ngIf='name.errors.required'>
+              <i>Please enter your PolicyId</i>
+            </small>
+          </div>
+          <br />
+          <br />
+  
+  
+          <label for="TimePeriod">Enter TimePeriod :</label>
+          <input type="text" class="form-control" id="TimePeriod" name="timePeriod" #name='ngModel' ngModel required>
+          <div *ngIf='name.invalid && name.touched'>
+            <small class="text-danger" *ngIf='name.errors.required'>
+              <i>Please enter Time Period</i>
+            </small>
+          </div>
+          <br />
+          <br />
+  
+  
+  
+          <label for="RefundPercentage">Enter RefundPercentage :</label>
+          <input type="text" class="form-control" id="RefundPercentage" name="refundPercentage" #name='ngModel' ngModel
+            required>
+          <div *ngIf='name.invalid && name.touched'>
+            <small class="text-danger" *ngIf='name.errors.required'>
+              <i>Please enter Refund percentage</i>
+            </small>
+          </div>
+          <br />
+          <br />
+          <label for="AirlineName">Enter Airline Name :</label>
+          <input type="text" class="form-control" id="AirlineName" name="airlineName" #name='ngModel' ngModel required>
+          <div *ngIf='name.invalid && name.touched'>
+            <small class="text-danger" *ngIf='name.errors.required'>
+              <i>Please enter your airline name</i>
+            </small>
+          </div>
+  
+        </div>
+        <br />
+        <br />
+  
+        <div class="form-group">
+          <button class=" btn btn-success float-left" type="submit" [disabled]="RefundForm.invalid">
+            Submit
+          </button> &nbsp; &nbsp; &nbsp; &nbsp;
+          <button class="btn btn-danger" type="reset">
+            Reset
+          </button>
+        </div>
+  
+      </form>
+  
+    </div>
+  </div>
